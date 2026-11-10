@@ -81,7 +81,7 @@ export async function POST(req: NextRequest) {
 
   const slackUrl = process.env.SLACK_FEEDBACK_WEBHOOK_URL;
   const sbUrl = process.env.SUPABASE_URL;
-  const sbKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const sbKey = process.env.SUPABASE_FEEDBACK_KEY;
   if (!slackUrl && !(sbUrl && sbKey)) {
     return NextResponse.json({ error: "Feedback storage not configured." }, { status: 500 });
   }
